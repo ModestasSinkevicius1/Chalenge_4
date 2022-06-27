@@ -1,0 +1,128 @@
+body.container{
+    text-align: center;
+    display: grid;
+    margin: 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 
+                        50px 
+                        50px 
+                        50px 
+                        50px 
+                        50px;
+}
+
+.logo{
+    text-align: initial;
+    background-color: coral;
+}
+
+.container>nav{
+    grid-column: span 2/span 3;
+    background-color: greenyellow;
+    
+}
+
+.hero{
+    grid-column: 1/-1;
+}
+
+.testimonials, .services, .freelance{
+    grid-column: 1/-2;
+    display: flex;
+    justify-content: center;
+}
+
+.testimonials div, .services div{
+    flex: 50%;
+}
+
+.add{
+    background-color: rgb(233, 245, 2);
+    grid-column-start: 4;
+    grid-row: 3/6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.soc{
+    background-color: bisque;
+}
+
+.hero{
+    background-color: steelblue;
+}
+
+.testimonials{
+    background-color: orangered;
+}
+
+.services{
+    background-color:aqua;
+}
+
+.freelance{
+    background-color: rgb(49, 149, 86);
+}
+
+footer{
+    background-color: rgb(149, 49, 76);
+    grid-column:1/-1;
+    text-align: center;
+}
+
+@media (max-width:800px)
+{
+    .container>nav{
+        display: none;
+    }
+    .logo{
+        grid-column: 1/span 2;
+    }
+    .soc{
+        grid-column: 3/ span 2;
+    }
+    .add{
+        display: none;
+    }
+    .testimonials, .services, .freelance{
+        grid-column: 1/ span 4;
+    }
+    .services{
+        grid-row-start: 3;
+    }
+    .services>div:last-child{
+        display: none;
+    }
+}
+
+@media (max-width:500px)
+{
+    body.container{
+        position: relative;
+    }
+    .container>nav{
+        display: block;
+        position: fixed;
+        bottom: 5px;
+        width: 100%;  
+    }
+    .soc{
+        display: none;
+    }
+    .logo{
+        grid-column: 1 / span 4;
+    }
+    .services{
+        flex-flow: column;
+    }
+    .services>div:last-child{
+        display: block;
+    }
+    .testimonials{
+        flex-flow: column;
+    }
+    .freelance{
+        grid-row-start: 4;
+    }
+}
